@@ -1,0 +1,71 @@
+{% extends 'client/design.html' %}
+{% block userblock %}
+{% load staticfiles %}
+<style>
+
+
+
+
+
+    .viewdetails{
+    position: relative;
+       top: -34px;
+
+    margin-left:-73px;
+    padding:13px;
+    width:1337px;
+    height: 600px;
+    overflow:auto;
+        text-align: center;
+}
+
+
+
+.viewdetails table tr th{
+    color:white;
+}
+.viewdetails table tr th{
+background:#827a68;
+padding:10px;
+}
+.viewdetails table tr td{
+background-color:rgb(195, 199, 200);
+padding:10px;
+}
+.viewdetails table tr:hover td{
+background:rgba(237, 236, 234);
+}
+
+    </style>
+<form method="POST">
+    {% csrf_token %}
+<div class="viewdetails" >
+<table style="font-size:100%; color:" align="right">
+    <tr>
+
+<th>ID</th>
+<th>TITLE</th>
+<th>TEXT</th>
+
+<th>LABEL</th>
+{% for v in obj1 %}
+    </tr>
+
+    <tr >
+
+        <td>{{v.newsid}}</td>
+        <td>{{v.title}}</td>
+        <td>{{v.text}}</td>
+        <td>{{v.label}}</td>
+
+
+
+    </tr>
+
+{% endfor %}
+
+
+</table> </div>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'management/design1.html' %}
+{% block adminblock %}
+{% load staticfiles %}
+<style>
+
+
+        .upload{
+        position: absolute;
+        top:210px;
+        margin-left:225px;
+        padding:25px;
+        width:900px;
+        height: 400px;
+        overflow:auto;
+}
+
+        .upload table{
+         width:60em;
+         text-align:center;
+         //border-collapse:collapse;
+         border-spacing:1px;
+         background:white;
+}
+
+        .upload table tr th{
+            color:white;
+}
+            .upload table tr th{
+            background:rgb(255, 0, 0);
+            padding:10px;
+}
+            .upload table tr td{
+            background-color:rgb(245, 245, 245);
+             margin-left:center;
+            padding:10px;
+}
+            .upload table tr:hover td{
+            background:rgb(179, 179, 179);
+}
+            .buttonpost {
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+             text-align: center;
+             text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+             margin: 4px 2px;
+            cursor: pointer;
+            }
+
+</style>
+<body>
+<div class="upload">
+<form method="POST" enctype="multipart/form-data">
+
+    {%csrf_token%}
+    <table align="right" style="color:black">
+
+         <tr>
+            <td style="color:black;" ><b>Accident Datasets Upload</b></td>
+            <td>{{v.datasets}}</td>
+        </tr>
+
+
+
+         <tr>
+            <td style="text-align:center;" colspan="1"><input type="submit" class="buttonpost" name="submit" value="Post the Datasets"></td>
+        </tr>
+
+
+
+</table>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body{
+    background: url("{% static 'f4.jpg' %}");
+ background-size: cover;
+    }
+        .menu table{
+          width:100%;
+          text-align:center;
+
+          }
+          .menu table td:hover{
+          background:rgb(0,0,0);
+
+          }
+          .menu table td{
+          background:rgb(255, 255, 255);
+
+         }
+          .menu table,.menu table th,.menu table td {
+    border: ;
+    border-collapse: collapse;
+
+}
+.menu table th,.menu table  td {
+    padding: 15px;
+
+    }
+
+
+          .topic h1{
+         color: #0c0c0c;
+    padding: 2px;
+    text-align: center;
+    border-style: none;
+    height: 100px;
+    width: 1330px;
+    float: left;
+    background: #f8f9fb;
+
+          }
+          .mainholder{
+
+          position:relative;
+          top:50px;
+          left:50px;
+          z-index:999;
+           }
+
+
+    </style>
+</head>
+<body>
+<div class="background-image">
+    <div class="topic"><h1 style="margin-top:10px;margin-left:18px;border-style:none;width:1300px;height:40px;border-color:black;background:;">A SMART SYSTEM FOR FAKE NEWS DETECTION USING MACHINE LEARNING</h1></div>
+<div class="menu">
+        <table>
+            <tr>
+                <td><a  style="color:#151514;text-decoration: none;" href="{% url 'uploadpage1' %}">NEWS UPLOAD</a></td>
+                <td><a  style="color:#151514;text-decoration: none;" href="{% url 'upload_dataset' %}">UPLOAD DATASET</a></td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="marqee">
+
+</div>
+<div class="mainholder">
+{% block adminblock %}
+{% endblock %}
+</div>
+
+</body>
+</html>
